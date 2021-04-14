@@ -21,7 +21,7 @@ const Herosection = () => {
               </p>
               <Button
                 type="default"
-                className="px-4 my-5 border border-black bg-transparent"
+                className="px-4 my-6 border border-black bg-transparent"
                 size="large"
                 shape="round"
               >
