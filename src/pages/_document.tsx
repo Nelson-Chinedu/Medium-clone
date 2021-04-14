@@ -14,7 +14,6 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
             rel="stylesheet"
           />
-          <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css" />
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#000000" />
         </Head>
