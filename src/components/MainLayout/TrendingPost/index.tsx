@@ -10,7 +10,7 @@ const TrendingPost: FunctionComponent<{}> = () => {
     setBlogPost(posts);
   }, []);
   return (
-    <div className="border-b border-black">
+    <div className="border-b border-gray-200">
       <div className="c-trendingPost-container mx-auto py-12">
         <p className="font-bold text-xs pb-4">TRENDING ON MEDIUM</p>
         <div className="grid grid-cols-3 gap-7">
