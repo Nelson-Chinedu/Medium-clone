@@ -43,31 +43,31 @@ const FeaturedPost: FunctionComponent<{}> = () => {
           DISCOVER MORE OF WHAT MATTERS TO YOU
         </h2>
         <div className="block">
-          <Button type="" className="mb-2 mr-2" size="middle">
+          <Button type="default" className="mb-2 mr-2" size="middle">
             Self
           </Button>
-          <Button type="" className="mb-2 mr-2" size="middle">
+          <Button type="default" className="mb-2 mr-2" size="middle">
             Relationships
           </Button>
-          <Button type="" className="mb-2 mr-2" size="middle">
+          <Button type="default" className="mb-2 mr-2" size="middle">
             Data Science
           </Button>
-          <Button type="" className="mb-2 mr-2" size="middle">
+          <Button type="default" className="mb-2 mr-2" size="middle">
             Programming
           </Button>
-          <Button type="" className="mb-2 mr-2" size="middle">
+          <Button type="default" className="mb-2 mr-2" size="middle">
             Productivity
           </Button>
-          <Button type="" className="mb-2 mr-2" size="middle">
+          <Button type="default" className="mb-2 mr-2" size="middle">
             Javascript
           </Button>
-          <Button type="" className="mb-2 mr-2" size="middle">
+          <Button type="default" className="mb-2 mr-2" size="middle">
             Machine Learning
           </Button>
-          <Button type="" className="mb-2 mr-2" size="middle">
+          <Button type="default" className="mb-2 mr-2" size="middle">
             Politics
           </Button>
-          <Button type="" className="mb-2 mr-2" size="middle">
+          <Button type="default" className="mb-2 mr-2" size="middle">
             Health
           </Button>
         </div>

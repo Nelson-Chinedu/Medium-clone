@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 import NavigationDesktop from 'src/components/Shared/Navigation/NavigationLg';
 import Button from 'src/components/Shared/Button';
 
-const Herosection = () => {
+const Herosection: FunctionComponent<{}> = () => {
   return (
     <div className="c-herosection">
       <NavigationDesktop />

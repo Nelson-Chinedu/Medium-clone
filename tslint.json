@@ -16,6 +16,7 @@
     "jsx-wrap-multiline": false,
     "jsx-no-multiline-js": false,
     "jsx-boolean-value": false,
+    "jsx-no-lambda":false,
     "quotemark": [true, "single", "jsx-double"],
     "member-access": false,
     "no-console": {
