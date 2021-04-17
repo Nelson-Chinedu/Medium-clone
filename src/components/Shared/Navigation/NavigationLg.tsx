@@ -14,7 +14,7 @@ const NavigationDesktop: FunctionComponent<{}> = () => {
   const { openModal } = useContext<MContext>(ModalContext);
 
   return (
-    <div className="c-nav border-b border-black py-5">
+    <div className="c-nav border-b border-black py-6">
       <div className="c-nav-wrapper mx-auto flex items-center justify-between">
         <div>
           <svg
