@@ -5,4 +5,5 @@ export type ModalDataProps = {
   btn3: string;
   auth: string;
   text: string;
+  terms: string;
 };
