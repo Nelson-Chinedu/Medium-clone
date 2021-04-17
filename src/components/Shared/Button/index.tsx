@@ -2,12 +2,12 @@ import React, { FunctionComponent, ReactNode } from 'react';
 import { Button } from 'antd';
 
 type Props = {
-  type: any;
+  type: 'link' | 'default';
   children: ReactNode;
   handleClick?: () => void;
   className: string;
   shape?: 'round';
-  size: 'large' | 'middle' | 'small';
+  size?: 'large' | 'middle' | 'small';
 };
 const Index: FunctionComponent<Props> = ({
   type,

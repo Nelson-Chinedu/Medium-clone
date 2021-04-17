@@ -1,9 +1,18 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import Link from 'next/link';
 
 import Button from 'src/components/Shared/Button';
+import { ModalContext } from 'src/components/Context/ModalContext';
+
+import { ModalDataProps } from 'src/components/types/modalData';
+
+type MContext = {
+  openModal: ({ btn1, btn2, btn3, text, auth }: ModalDataProps) => void;
+};
 
 const NavigationDesktop: FunctionComponent<{}> = () => {
+  const { openModal } = useContext<MContext>(ModalContext);
+
   return (
     <div className="c-nav border-b border-black py-5">
       <div className="c-nav-wrapper mx-auto flex items-center justify-between">
@@ -27,19 +36,40 @@ const NavigationDesktop: FunctionComponent<{}> = () => {
           <Link href="/">
             <a className="pr-7 font-semibold hover:text-gray-800">Write</a>
           </Link>
-          <Link href="/">
-            <a className="pr-7 font-semibold hover:text-gray-800">Sign In</a>
-          </Link>
-          <Link href="/">
-            <Button
-              type="default"
-              size="large"
-              shape="round"
-              className="bg-black text-white border-none"
-            >
-              Get Started
-            </Button>
-          </Link>
+          <Button
+            type="link"
+            className="pl-0 pr-7 font-medium text-black hover:text-gray-800"
+            handleClick={() =>
+              openModal({
+                title: 'Welcome back.',
+                btn1: 'Signin with Google',
+                btn2: 'Signin with Facebook',
+                btn3: 'Signin with Email',
+                text: 'Don`t have an account?',
+                auth: 'Signup',
+              })
+            }
+          >
+            Sign In
+          </Button>
+          <Button
+            type="default"
+            size="large"
+            shape="round"
+            className="bg-black text-white border-none"
+            handleClick={() =>
+              openModal({
+                title: 'Join Medium.',
+                btn1: 'Signup with Google',
+                btn2: 'Signup with Facebook',
+                btn3: 'Signup with Email',
+                text: 'Already have an account?',
+                auth: 'Signin',
+              })
+            }
+          >
+            Get Started
+          </Button>
         </div>
       </div>
     </div>
