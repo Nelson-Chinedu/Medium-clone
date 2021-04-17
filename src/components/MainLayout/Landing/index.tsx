@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, SetStateAction } from 'react';
 
-import Modal from 'src/components/Modal';
+import Modal from 'src/components/MainLayout/Modal';
 import Herosection from 'src/components/MainLayout/Herosection';
 import TrendingPost from 'src/components/MainLayout/TrendingPost';
 import FeaturedPost from 'src/components/MainLayout/FeaturedPost';
@@ -11,6 +11,8 @@ import { ModalDataProps } from 'src/components/types/modalData';
 const Landing = () => {
   const [toggle, setToggle] = useState<boolean>(false);
   const [emailAuth, setEmailAuth] = useState<boolean>(false);
+  const [successPage, setSucessPage] = useState<boolean>(false);
+  const [userEmail, setUserEmail] = useState<string>('');
   const [modalData, setModalData] = useState<ModalDataProps>({
     title: '',
     btn1: '',
@@ -38,6 +40,8 @@ const Landing = () => {
   const closeModal = () => {
     setToggle(false);
     setEmailAuth(false);
+    setSucessPage(false);
+    setUserEmail('');
   };
 
   const _handleEmailAuth = () => {
@@ -48,6 +52,14 @@ const Landing = () => {
     setEmailAuth(false);
   };
 
+  const _handleUserEmailAuth = () => {
+    setSucessPage(true);
+  };
+
+  const _handleChange = (e: { target: { value: SetStateAction<string> } }) => {
+    setUserEmail(e.target.value);
+  };
+
   return (
     <ModalContext.Provider
       value={{
@@ -56,8 +68,12 @@ const Landing = () => {
         openModal,
         modalData,
         emailAuth,
+        userEmail,
+        successPage,
         _handleEmailAuth,
         _handleClickOption,
+        _handleUserEmailAuth,
+        _handleChange,
       }}
     >
       <div

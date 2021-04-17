@@ -1,10 +1,11 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, SetStateAction } from 'react';
 
 type Props = {
-  type: 'text';
+  type: 'text' | 'email';
   className: string;
   handleClick?: () => void;
   handleBlur?: () => void;
+  handleChange?: (e: { target: { value: SetStateAction<string>; }; }) => void;
 };
 
 const Index: FunctionComponent<Props> = ({
@@ -12,6 +13,7 @@ const Index: FunctionComponent<Props> = ({
   className,
   handleClick,
   handleBlur,
+  handleChange
 }) => {
   return (
     <input
@@ -19,6 +21,7 @@ const Index: FunctionComponent<Props> = ({
       className={className}
       onClick={handleClick}
       onBlur={handleBlur}
+      onChange={handleChange}
     />
   );
 };
