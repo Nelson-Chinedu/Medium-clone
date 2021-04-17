@@ -7,7 +7,7 @@ import { ModalContext } from 'src/components/Context/ModalContext';
 import { ModalDataProps } from 'src/components/types/modalData';
 
 type MContext = {
-  openModal: ({ btn1, btn2, btn3, text, auth }: ModalDataProps) => void;
+  openModal: ({ btn1, btn2, btn3, text, auth, terms }: ModalDataProps) => void;
 };
 
 const NavigationDesktop: FunctionComponent<{}> = () => {
@@ -45,8 +45,9 @@ const NavigationDesktop: FunctionComponent<{}> = () => {
                 btn1: 'Signin with Google',
                 btn2: 'Signin with Facebook',
                 btn3: 'Signin with Email',
-                text: 'Don`t have an account?',
-                auth: 'Signup',
+                text: 'No account?',
+                auth: 'Create One',
+                terms: 'Sign In',
               })
             }
           >
@@ -56,7 +57,7 @@ const NavigationDesktop: FunctionComponent<{}> = () => {
             type="default"
             size="large"
             shape="round"
-            className="bg-black text-white border-none"
+            className="bg-black text-white border-none hover:bg-black hover:text-white"
             handleClick={() =>
               openModal({
                 title: 'Join Medium.',
@@ -64,7 +65,8 @@ const NavigationDesktop: FunctionComponent<{}> = () => {
                 btn2: 'Signup with Facebook',
                 btn3: 'Signup with Email',
                 text: 'Already have an account?',
-                auth: 'Signin',
+                auth: 'Sign In',
+                terms: 'Sign Up',
               })
             }
           >
