@@ -15,17 +15,52 @@ type MContext = {
   closeModal: () => void;
   modalData: ModalDataProps;
   emailAuth: boolean;
+  successPage: boolean;
+  userEmail: string;
+  _handleChange: () => void;
   _handleEmailAuth: () => void;
   _handleClickOption: () => void;
+  _handleUserEmailAuth: () => void;
 };
 
 export const Index: FunctionComponent<{}> = () => {
   const {
     emailAuth,
+    userEmail,
+    _handleChange,
     _handleEmailAuth,
     _handleClickOption,
+    _handleUserEmailAuth,
+    successPage,
+    closeModal,
     modalData: { title, btn1, btn2, btn3, auth, text, terms },
   } = useContext<MContext>(ModalContext);
+
+  if (
+    (successPage && terms === 'Sign In') ||
+    (successPage && terms === 'Sign Up')
+  ) {
+    return (
+      <Modal>
+        <div className="my-20 w-2/4 mx-auto text-center">
+          <h2 className=" text-3xl font-serif font-normal mb-6">
+            Check your inbox
+          </h2>
+          <p className="mb-0 text-base">Click the link we sent to</p>
+          <p className="mb-4 text-base">{userEmail} to sign in.</p>
+          <Button
+            className="my-8 w-1/4 text-center bg-black hover:bg-black text-white hover:text-white"
+            type="default"
+            shape="round"
+            size="large"
+            handleClick={closeModal}
+          >
+            OK
+          </Button>
+        </div>
+      </Modal>
+    );
+  }
 
   if (emailAuth && terms === 'Sign In') {
     return (
@@ -40,7 +75,8 @@ export const Index: FunctionComponent<{}> = () => {
           </p>
           <p className="mb-4">Your email</p>
           <Input
-            type="text"
+            type="email"
+            handleChange={_handleChange}
             className="border-b border-black outline-none focus:outline-none text-center w-4/5 text-base"
           />
           <Button
@@ -48,7 +84,7 @@ export const Index: FunctionComponent<{}> = () => {
             type="default"
             shape="round"
             size="large"
-            handleClick={_handleEmailAuth}
+            handleClick={_handleUserEmailAuth}
           >
             Continue
           </Button>
@@ -75,7 +111,8 @@ export const Index: FunctionComponent<{}> = () => {
           </p>
           <p className="mb-4">Your email</p>
           <Input
-            type="text"
+            type="email"
+            handleChange={_handleChange}
             className="border-b border-black outline-none focus:outline-none text-center w-4/5 text-base"
           />
           <Button
@@ -83,7 +120,7 @@ export const Index: FunctionComponent<{}> = () => {
             type="default"
             shape="round"
             size="large"
-            handleClick={_handleEmailAuth}
+            handleClick={_handleUserEmailAuth}
           >
             Continue
           </Button>
@@ -97,6 +134,7 @@ export const Index: FunctionComponent<{}> = () => {
       </Modal>
     );
   }
+
   return (
     <Modal>
       <h2 className="my-12 text-3xl font-serif font-normal">{title}</h2>
