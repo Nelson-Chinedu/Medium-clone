@@ -20,7 +20,7 @@ const FeaturedPost: FunctionComponent<{}> = () => {
   }, []);
 
   return (
-    <div className="c-featured-post mx-auto flex justify-between  my-8">
+    <div className="c-featured-post mx-auto flex justify-between my-8">
       <div className="c-featured-post-b-left">
         {blogPost.map((data: any) => (
           <div key={data.id} className="flex justify-between mb-5">
