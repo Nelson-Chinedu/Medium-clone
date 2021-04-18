@@ -2,18 +2,18 @@ import React, { FunctionComponent } from 'react';
 import { Avatar } from 'antd';
 import { BellOutlined, SearchOutlined, ReadOutlined } from '@ant-design/icons';
 
-import { showGreeting } from 'src/components/AppLayout/showGreeting';
+import { showGreeting } from 'src/components/AppLayout/Landing/showGreeting';
 
 import Button from 'src/components/Shared/Button';
 
 const NavigationDesktop: FunctionComponent<{}> = () => {
   return (
-    <div className="c-nav-dashboard py-6">
+    <div className="c-nav-dashboard py-8">
       <div className="c-nav-wrapper mx-auto flex items-center justify-between">
         <div className="flex items-end">
-          <div className="w-2/4">
+          <div className="w-2/5">
             <svg
-              width="256px"
+              // width="20px"
               height="auto"
               viewBox="0 0 3940 610"
               className="w-full"
@@ -48,7 +48,11 @@ const NavigationDesktop: FunctionComponent<{}> = () => {
           <Button type="default" shape="round" className="mr-3">
             Upgrade
           </Button>
-          <Avatar>U</Avatar>
+          <Avatar
+            src={<img src="/image/avatar-1.jpg" />}
+            size={35}
+            className="cursor-pointer"
+          />
         </div>
       </div>
     </div>

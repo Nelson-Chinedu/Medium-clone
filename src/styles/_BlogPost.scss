@@ -1,0 +1,25 @@
+.c-blogpost-wrapper{
+  width: 90%;
+  .c-blog-post-left{
+    width: 70%;
+    .c-blog-post-left-one,
+    .c-blog-post-left-two{
+      width: 48%;
+      .c-blog-post-left-two-left{
+        width: 70%;
+      }
+      .c-blog-post-left-two-right{
+        width: 25%;
+      }
+    }
+  }
+  .c-blog-post-right{
+    width: 28%;
+  }
+  .c-blogpost-bottom-left{
+    width: 60%;
+  }
+  .c-blogpost-bottom-right{
+    width: 30%;
+  }
+}
