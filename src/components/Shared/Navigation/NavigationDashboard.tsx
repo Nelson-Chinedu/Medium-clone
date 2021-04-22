@@ -1,19 +1,21 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import { Avatar } from 'antd';
 import { BellOutlined, SearchOutlined, ReadOutlined } from '@ant-design/icons';
 
 import { showGreeting } from 'src/components/AppLayout/Landing/showGreeting';
 
 import Button from 'src/components/Shared/Button';
+import { MenuContext } from 'src/components/Context/MenuContext';
 
 const NavigationDesktop: FunctionComponent<{}> = () => {
+  const { _handleClick } = useContext(MenuContext);
+
   return (
     <div className="c-nav-dashboard py-8">
       <div className="c-nav-wrapper mx-auto flex items-center justify-between">
         <div className="flex items-end">
           <div className="w-2/5">
             <svg
-              // width="20px"
               height="auto"
               viewBox="0 0 3940 610"
               className="w-full"
@@ -48,11 +50,13 @@ const NavigationDesktop: FunctionComponent<{}> = () => {
           <Button type="default" shape="round" className="mr-3">
             Upgrade
           </Button>
-          <Avatar
-            src={<img src="/image/avatar-1.jpg" />}
-            size={35}
-            className="cursor-pointer"
-          />
+          <button className="outline-none border-none" onClick={_handleClick}>
+            <Avatar
+              src={<img src="/image/avatar-1.jpg" />}
+              size={35}
+              className="cursor-pointer"
+            />
+          </button>
         </div>
       </div>
     </div>
