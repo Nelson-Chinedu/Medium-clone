@@ -6,20 +6,34 @@ import BlogPost from 'src/components/AppLayout/Landing/BlogPost';
 import TrendingPost from 'src/components/MainLayout/TrendingPost';
 
 import DashboardNavigation from 'src/components/Shared/Navigation/NavigationDashboard';
-import Tooltip from 'src/components/Shared/Tooltip';
+import MenuTooltip from 'src/components/Shared/Tooltip/Menu';
+import Notificatiotooltip from 'src/components/Shared/Tooltip/Notification';
 
 import { MenuContext } from 'src/components/Context/MenuContext';
 
 const Index: FunctionComponent<{}> = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleNotification, setToggleNotification] = useState(false);
 
-  const _handleClick = () => {
+  const _handleMenuClick = () => {
     setToggleMenu(!toggleMenu);
   };
+  const _handleNotifactionClick = () => {
+    setToggleNotification(!toggleNotification);
+  };
+
   return (
-    <MenuContext.Provider value={{ _handleClick, toggleMenu }}>
+    <MenuContext.Provider
+      value={{
+        _handleMenuClick,
+        _handleNotifactionClick,
+        toggleMenu,
+        toggleNotification,
+      }}
+    >
       <DashboardNavigation />
-      <Tooltip />
+      <MenuTooltip />
+      <Notificatiotooltip />
       <HeroSection />
       <TrendingPost />
       <BlogPost />
