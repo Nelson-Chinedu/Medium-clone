@@ -1,0 +1,15 @@
+.c-notification-wrapper {
+  .c-notification-action,
+  .c-notification-time {
+    color: rgba(107, 114, 128, var(--tw-text-opacity));
+  }
+  &:hover .c-notification-action {
+    color: black !important;
+  }
+  &:hover .c-notification-para {
+    color: black !important;
+  }
+  &:hover .c-notification-time {
+    color: black !important;
+  }
+}

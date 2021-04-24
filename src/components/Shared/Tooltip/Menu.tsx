@@ -3,14 +3,14 @@ import { Avatar } from 'antd';
 
 import { MenuContext } from 'src/components/Context/MenuContext';
 
-const Tooltip: FunctionComponent<{}> = () => {
+const Menu: FunctionComponent<{}> = () => {
   const { toggleMenu } = useContext(MenuContext);
 
   return (
     <div
       className={`${
         toggleMenu ? `block` : `hidden`
-      } c-tooltip w-1/5 bg-white shadow absolute right-2 top-20 z-50 h-auto  rouded-sm text-gray-600`}
+      } c-menutooltip w-1/5 bg-white shadow absolute right-2 top-20 z-50 h-auto rouded-sm text-gray-600`}
     >
       <div className="flex justify-start py-6 px-4 items-center ">
         <div className="pr-3">
@@ -53,4 +53,4 @@ const Tooltip: FunctionComponent<{}> = () => {
   );
 };
 
-export default Tooltip;
+export default Menu;
