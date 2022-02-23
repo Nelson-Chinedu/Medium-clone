@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import Image from 'next/image';
 
 import NavigationDesktop from 'src/components/Shared/Navigation/NavigationLg';
 import Button from 'src/components/Shared/Button';
@@ -8,26 +9,28 @@ const Herosection: FunctionComponent<{}> = () => {
     <div className="c-herosection">
       <NavigationDesktop />
       <div className="c-herosection-container border-b border-black">
-        <div className="c-herosection-wrapper mx-auto py-10">
-          <div className="w-2/4">
+        <div className="c-herosection-wrapper flex items-start justify-between mx-auto pt-8">
+          <div className="c-herosection-content-left">
             <h1 className="c-herosection-header font-serif">
-              Where good ideas find you
+              Medium is a place to write, read, and connect
             </h1>
-            <div className="mt-10">
+            <div className="mt-1 w-9/12">
               <p className="text-lg font-normal">
-                Read and share new perspectives on just about any topic.
-                Everyone's welcome.
-                <span className="underline">Learn more.</span>
+                It's easy and free to post your thinking on any topic and
+                connect with millions of readers.
               </p>
               <Button
                 type="default"
-                className="px-4 my-6 border border-black bg-transparent"
+                className="px-4 my-6 border border-black bg-white"
                 size="large"
                 shape="round"
               >
-                Get Started
+                Start writing
               </Button>
             </div>
+          </div>
+          <div className="mt-5 mr-16">
+            <Image src="/image/med_img.png" width={400} height={350} />
           </div>
         </div>
       </div>

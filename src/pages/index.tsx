@@ -5,14 +5,10 @@ import Dashboard from 'src/components/AppLayout/Landing';
 
 const Index: FunctionComponent<{}> = () => {
   const [loggedIn] = useState<boolean>(false);
-  if(loggedIn){
-    return (
-      <Dashboard />
-    )
+  if (loggedIn) {
+    return <Dashboard />;
   }
-  return (
-    <Landing />
-  )
+  return <Landing />;
 };
 
 export default Index;
