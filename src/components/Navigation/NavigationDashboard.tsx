@@ -1,11 +1,11 @@
-import React, { FunctionComponent, useContext } from 'react';
-import { Avatar } from 'antd';
-import { BellOutlined, SearchOutlined, ReadOutlined } from '@ant-design/icons';
+import React, { FunctionComponent, useContext } from "react";
+import { Avatar } from "antd";
+import { BellOutlined, SearchOutlined, ReadOutlined } from "@ant-design/icons";
 
-import { showGreeting } from 'src/pages/App/Landing/showGreeting';
+import { showGreeting } from "src/helpers/showGreeting";
 
-import Button from 'src/components/Button';
-import { MenuContext } from 'src/context/MenuContext';
+import Button from "src/components/Button";
+import { MenuContext } from "src/context/MenuContext";
 
 const NavigationDesktop: FunctionComponent<{}> = () => {
   const { _handleMenuClick, _handleNotifactionClick } = useContext(MenuContext);
@@ -22,18 +22,10 @@ const NavigationDesktop: FunctionComponent<{}> = () => {
           <p className="text-lg font-bold pl-8">{showGreeting()}</p>
         </div>
         <div className="flex justify-around items-baseline">
-          <Button
-            type="link"
-            shape="round"
-            className="text-xl text-gray-500 px-3 py-0"
-          >
+          <Button type="link" shape="round" className="text-xl text-gray-500 px-3 py-0">
             <SearchOutlined />
           </Button>
-          <Button
-            type="link"
-            shape="round"
-            className="text-xl text-gray-500 px-3 py-0"
-          >
+          <Button type="link" shape="round" className="text-xl text-gray-500 px-3 py-0">
             <ReadOutlined />
           </Button>
           <Button
@@ -47,16 +39,8 @@ const NavigationDesktop: FunctionComponent<{}> = () => {
           <Button type="default" shape="round" className="mr-3">
             Upgrade
           </Button>
-          <Button
-            type="link"
-            className="outline-none border-none"
-            handleClick={_handleMenuClick}
-          >
-            <Avatar
-              src={<img src="/image/avatar-1.jpg" />}
-              size={35}
-              className="cursor-pointer"
-            />
+          <Button type="link" className="outline-none border-none" handleClick={_handleMenuClick}>
+            <Avatar src={<img src="/image/avatar-1.jpg" />} size={35} className="cursor-pointer" />
           </Button>
         </div>
       </div>

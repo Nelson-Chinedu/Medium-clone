@@ -1,15 +1,16 @@
-import React, { FunctionComponent, useState } from 'react';
+import React, { FunctionComponent, useState } from "react";
 
-import HeroSection from 'src/pages/App/Landing/HeroSection';
-import BlogPost from 'src/pages/App/Landing/BlogPost';
+// import HeroSection from "src/pages/App/Landing/HeroSection";
+// import BlogPost from "src/pages/App/Landing/BlogPost";
 
-import TrendingPost from 'src/pages/Main/TrendingPost';
+// import TrendingPost from "src/pages/Main/TrendingPost";
 
-import DashboardNavigation from 'src/components/Navigation/NavigationDashboard';
-import MenuTooltip from 'src/components/Tooltip/Menu';
-import Notificatiotooltip from 'src/components/Tooltip/Notification';
+// import DashboardNavigation from 'src/components/Navigation/NavigationDashboard';
+// import MenuTooltip from "src/components/Tooltip/Menu";
+// import Notificatiotooltip from "src/components/Tooltip/Notification";
 
-import { MenuContext } from 'src/context/MenuContext';
+import { MenuContext } from "src/context/MenuContext";
+import withDashboardLayout from "src/HOC/withDashboardLayout";
 
 const Index: FunctionComponent<{}> = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -31,14 +32,14 @@ const Index: FunctionComponent<{}> = () => {
         toggleNotification,
       }}
     >
-      <DashboardNavigation />
-      <MenuTooltip />
+      {/* <DashboardNavigation /> */}
+      {/* <MenuTooltip />
       <Notificatiotooltip />
       <HeroSection />
       <TrendingPost />
-      <BlogPost />
+      <BlogPost /> */}
     </MenuContext.Provider>
   );
 };
 
-export default Index;
+export default withDashboardLayout(Index);
