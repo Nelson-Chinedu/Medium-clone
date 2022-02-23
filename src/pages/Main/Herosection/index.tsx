@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import Image from 'next/image';
 
-import NavigationDesktop from 'src/components/Shared/Navigation/NavigationLg';
-import Button from 'src/components/Shared/Button';
+import NavigationDesktop from 'src/components/Navigation/NavigationLg';
+import Button from 'src/components/Button';
 
 const Herosection: FunctionComponent<{}> = () => {
   return (

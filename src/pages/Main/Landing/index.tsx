@@ -1,12 +1,12 @@
 import React, { useState, SetStateAction } from 'react';
 
-import Modal from 'src/components/MainLayout/Modal';
-import Herosection from 'src/components/MainLayout/Herosection';
-import TrendingPost from 'src/components/MainLayout/TrendingPost';
-import FeaturedPost from 'src/components/MainLayout/FeaturedPost';
-import { ModalContext } from 'src/components/Context/ModalContext';
+import Modal from 'src/pages/Main/Modal';
+import Herosection from 'src/pages/Main/Herosection';
+import TrendingPost from 'src/pages/Main/TrendingPost';
+import FeaturedPost from 'src/pages/Main/FeaturedPost';
+import { ModalContext } from 'src/context/ModalContext';
 
-import { ModalDataProps } from 'src/components/types/modalData';
+import { ModalDataProps } from 'src/types/modalData';
 
 const Landing = () => {
   const [toggle, setToggle] = useState<boolean>(false);

@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import Navigation from 'src/components/AppLayout/NewStory/Navigation';
+import Navigation from 'src/pages/App/NewStory/Navigation';
 
 const NewStory: FunctionComponent<{}> = () => {
   return (

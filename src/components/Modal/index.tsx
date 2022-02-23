@@ -1,9 +1,9 @@
 import React, { FunctionComponent, useContext, ReactNode } from 'react';
 import Image from 'next/image';
 
-import { ModalContext } from 'src/components/Context/ModalContext';
+import { ModalContext } from 'src/context/ModalContext';
 
-import { ModalDataProps } from 'src/components/types/modalData';
+import { ModalDataProps } from 'src/types/modalData';
 
 type Props = {
   children: ReactNode;

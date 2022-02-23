@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import Link from 'next/link';
 
-import posts from 'src/components/data/trendingPost.json';
+import posts from 'src/constant/trendingPost.json';
 
 const TrendingPost: FunctionComponent<{}> = () => {
   const [blogPost, setBlogPost] = useState([]);

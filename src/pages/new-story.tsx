@@ -1,10 +1,8 @@
 import React from 'react';
-import NewStory from 'src/components/AppLayout/NewStory';
+import NewStory from 'src/pages/App/NewStory';
 
 const NewStoryPage = () => {
-  return (
-    <NewStory />
-  )
+  return <NewStory />;
 };
 
 export default NewStoryPage;

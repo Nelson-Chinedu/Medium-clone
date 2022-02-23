@@ -2,13 +2,13 @@ import React, { FunctionComponent, useContext } from 'react';
 import Image from 'next/image';
 import { LeftOutlined } from '@ant-design/icons';
 
-import Modal from 'src/components/Shared/Modal';
-import Button from 'src/components/Shared/Button';
-import Input from 'src/components/Shared/Input';
+import Modal from 'src/components/Modal';
+import Button from 'src/components/Button';
+import Input from 'src/components/Input';
 
-import { ModalContext } from 'src/components/Context/ModalContext';
+import { ModalContext } from 'src/context/ModalContext';
 
-import { ModalDataProps } from 'src/components/types/modalData';
+import { ModalDataProps } from 'src/types/modalData';
 
 type MContext = {
   toggle: boolean;

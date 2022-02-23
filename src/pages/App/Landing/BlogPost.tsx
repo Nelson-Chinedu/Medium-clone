@@ -2,9 +2,9 @@ import React, { FunctionComponent, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Avatar } from 'antd';
 
-import Button from 'src/components/Shared/Button';
+import Button from 'src/components/Button';
 
-import MockData from 'src/components/data/mock_data.json';
+import MockData from 'src/constant/mock_data.json';
 
 type IMockData = {
   id: number;

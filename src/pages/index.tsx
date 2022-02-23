@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from 'react';
 
-import Landing from 'src/components/MainLayout/Landing';
-import Dashboard from 'src/components/AppLayout/Landing';
+import Landing from 'src/pages/Main/Landing';
+import Dashboard from 'src/pages/App/Landing';
 
 const Index: FunctionComponent<{}> = () => {
   const [loggedIn] = useState<boolean>(false);

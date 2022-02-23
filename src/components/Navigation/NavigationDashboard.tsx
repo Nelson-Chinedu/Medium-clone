@@ -2,10 +2,10 @@ import React, { FunctionComponent, useContext } from 'react';
 import { Avatar } from 'antd';
 import { BellOutlined, SearchOutlined, ReadOutlined } from '@ant-design/icons';
 
-import { showGreeting } from 'src/components/AppLayout/Landing/showGreeting';
+import { showGreeting } from 'src/pages/App/Landing/showGreeting';
 
-import Button from 'src/components/Shared/Button';
-import { MenuContext } from 'src/components/Context/MenuContext';
+import Button from 'src/components/Button';
+import { MenuContext } from 'src/context/MenuContext';
 
 const NavigationDesktop: FunctionComponent<{}> = () => {
   const { _handleMenuClick, _handleNotifactionClick } = useContext(MenuContext);

@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useContext } from 'react';
 import Link from 'next/link';
 
-import Button from 'src/components/Shared/Button';
-import { ModalContext } from 'src/components/Context/ModalContext';
+import Button from 'src/components/Button';
+import { ModalContext } from 'src/context/ModalContext';
 
-import { ModalDataProps } from 'src/components/types/modalData';
+import { ModalDataProps } from 'src/types/modalData';
 
 type MContext = {
   openModal: ({ btn1, btn2, btn3, text, auth, terms }: ModalDataProps) => void;

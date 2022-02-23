@@ -1,15 +1,15 @@
 import React, { FunctionComponent, useState } from 'react';
 
-import HeroSection from 'src/components/AppLayout/Landing/HeroSection';
-import BlogPost from 'src/components/AppLayout/Landing/BlogPost';
+import HeroSection from 'src/pages/App/Landing/HeroSection';
+import BlogPost from 'src/pages/App/Landing/BlogPost';
 
-import TrendingPost from 'src/components/MainLayout/TrendingPost';
+import TrendingPost from 'src/pages/Main/TrendingPost';
 
-import DashboardNavigation from 'src/components/Shared/Navigation/NavigationDashboard';
-import MenuTooltip from 'src/components/Shared/Tooltip/Menu';
-import Notificatiotooltip from 'src/components/Shared/Tooltip/Notification';
+import DashboardNavigation from 'src/components/Navigation/NavigationDashboard';
+import MenuTooltip from 'src/components/Tooltip/Menu';
+import Notificatiotooltip from 'src/components/Tooltip/Notification';
 
-import { MenuContext } from 'src/components/Context/MenuContext';
+import { MenuContext } from 'src/context/MenuContext';
 
 const Index: FunctionComponent<{}> = () => {
   const [toggleMenu, setToggleMenu] = useState(false);

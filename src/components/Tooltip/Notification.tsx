@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useContext } from 'react';
 import { Tabs } from 'antd';
 
-import { MenuContext } from 'src/components/Context/MenuContext';
-import TabPaneContent from 'src/components/Shared/Tooltip/TabPaneContent';
+import { MenuContext } from 'src/context/MenuContext';
+import TabPaneContent from 'src/components/Tooltip/TabPaneContent';
 
 const { TabPane } = Tabs;
 
