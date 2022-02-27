@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import MockData from 'src/components/data/mock_data.json';
-import Button from 'src/components/Shared/Button';
+import MockData from 'src/constant/mock_data.json';
+import Button from 'src/components/Button';
 
 type IMockData = {
   id: number;
