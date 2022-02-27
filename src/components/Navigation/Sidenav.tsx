@@ -1,9 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import { Avatar, Image } from 'antd';
+import { Image } from 'antd';
+
+import { Avatar } from 'src/components';
 
 const Sidenav: FunctionComponent<{}> = () => {
   return (
-    <div className="flex flex-col justify-between items-center py-10 c-sidenav border-r border-gray-300 h-screen">
+    <div className="c-sidenav flex flex-col fixed justify-between items-center py-10 border-r border-gray-300 h-screen">
       <div>
         <svg viewBox="0 0 1043.63 592.71" className="w-1/2 m-auto">
           <g data-name="Layer 2">
@@ -105,6 +107,9 @@ const Sidenav: FunctionComponent<{}> = () => {
       </div>
       <div>
         <Avatar
+          alt="profile picture"
+          shape="circle"
+          size="default"
           src={
             <Image
               src="https://randomuser.me/api/portraits/women/78.jpg"

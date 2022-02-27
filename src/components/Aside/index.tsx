@@ -1,17 +1,23 @@
 import React, { FunctionComponent } from 'react';
-import Button from 'src/components/Button';
+import { Divider } from 'antd';
+
+import Upgrade from 'src/components/Aside/Upgrade';
+import Recommended from 'src/components/Aside/Recommended';
+import Follow from 'src/components/Aside/Follow';
+import ReadingList from 'src/components/Aside/ReadingList';
 
 const Aside: FunctionComponent<{}> = () => {
   return (
-    <div className="c-aside border-l border-gray-300 h-screen pt-10 px-8">
-      <Button
-        type="default"
-        shape="round"
-        size="large"
-        className="c-btn-upgrade"
-      >
-        Upgrade
-      </Button>
+    <div className="">
+      <div>
+        <div>
+          <Upgrade />
+          <Divider />
+          <Recommended />
+          <Follow />
+          <ReadingList />
+        </div>
+      </div>
     </div>
   );
 };

@@ -3,11 +3,12 @@ import { Button } from 'antd';
 
 type Props = {
   type: 'link' | 'default';
-  children: ReactNode;
+  children?: ReactNode;
   handleClick?: () => void;
   className: string;
-  shape?: 'round';
+  shape?: 'round' | 'circle';
   size?: 'large' | 'middle' | 'small';
+  icon?: ReactNode;
 };
 const Index: FunctionComponent<Props> = ({
   type,
@@ -16,6 +17,7 @@ const Index: FunctionComponent<Props> = ({
   className,
   shape,
   size,
+  icon,
 }) => {
   return (
     <Button
@@ -24,6 +26,7 @@ const Index: FunctionComponent<Props> = ({
       className={className}
       shape={shape}
       size={size}
+      icon={icon}
     >
       {children}
     </Button>
