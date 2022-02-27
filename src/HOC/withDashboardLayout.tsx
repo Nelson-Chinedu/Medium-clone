@@ -7,11 +7,15 @@ const withDashboardLayout =
   ({ ...props }) => {
     return (
       <div className="flex justify-between">
-        <Sidenav />
-        <main>
+        <nav className="c-sidenav">
+          <Sidenav />
+        </nav>
+        <main className="c-main py-8 px-32">
           <Component {...props} />
         </main>
-        <Aside />
+        <aside className="c-aside border-l border-gray-300 pt-10 px-8">
+          <Aside />
+        </aside>
       </div>
     );
   };

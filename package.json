@@ -8,6 +8,7 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@tailwindcss/postcss7-compat": "^2.1.0",
     "@zeit/next-sass": "^1.0.1",
     "antd": "^4.15.1",
