@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import { useRouter } from 'next/router';
 import { Divider } from 'antd';
 import { FileAddOutlined, EllipsisOutlined } from '@ant-design/icons';
 
@@ -15,10 +16,20 @@ type Props = {
 };
 
 const Articles: FunctionComponent<{}> = () => {
+  const router = useRouter();
+
+  const handleChange = (blog: any) => {
+    const path = blog.blogTitle.split(' ').join('-');
+    router.push(`/${path}-${blog.id}`);
+  };
   return (
     <div>
       {BLOG_POSTS.map((blog: Props) => (
-        <section key={blog.id}>
+        <section
+          key={blog.id}
+          className="cursor-pointer"
+          onClick={() => handleChange(blog)}
+        >
           <article className="flex justify-between my-4">
             <div style={{ width: '75%' }}>
               <div className="flex items-center">
