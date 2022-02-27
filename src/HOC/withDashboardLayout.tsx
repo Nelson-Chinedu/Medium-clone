@@ -1,6 +1,6 @@
-import React from "react";
-import Aside from "src/components/Aside";
-import Sidenav from "src/components/Navigation/Sidenav";
+import React from 'react';
+import Aside from 'src/components/Aside';
+import Sidenav from 'src/components/Navigation/Sidenav';
 
 const withDashboardLayout =
   (Component: any) =>
@@ -8,7 +8,9 @@ const withDashboardLayout =
     return (
       <div className="flex justify-between">
         <Sidenav />
-        <Component {...props} />
+        <main>
+          <Component {...props} />
+        </main>
         <Aside />
       </div>
     );
