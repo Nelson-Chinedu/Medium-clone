@@ -9,11 +9,12 @@ function callback(key: string) {
 
 type Props = {
   children: ReactNode;
+  defaultActiveKey: string;
 };
 
-const Index: FunctionComponent<Props> = ({ children }) => {
+const Index: FunctionComponent<Props> = ({ children, defaultActiveKey }) => {
   return (
-    <Tabs defaultActiveKey="2" onChange={callback}>
+    <Tabs defaultActiveKey={defaultActiveKey} onChange={callback}>
       {children}
     </Tabs>
   );

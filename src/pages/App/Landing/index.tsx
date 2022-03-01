@@ -58,7 +58,7 @@ const Index: FunctionComponent<{}> = () => {
           ))}
         </div>
         <div>
-          <Tab>
+          <Tab defaultActiveKey="2">
             <TabPane tab="Following" key="1">
               <div className="w-2/4 mx-auto mt-14 text-center">
                 <p className="mb-4">
