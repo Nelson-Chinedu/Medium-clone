@@ -1,4 +1,4 @@
-import { FunctionComponent, SetStateAction, useState } from 'react';
+import { FunctionComponent, SetStateAction } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
@@ -10,10 +10,10 @@ import RECENTLY_VIEWED from 'src/constant/mock_data.json';
 
 const Recent: FunctionComponent<{}> = () => {
   const router = useRouter();
-  const [_, setIsActive] = useState(1);
+  let isActive = 1;
 
   const handleChange = (key: SetStateAction<number>) => {
-    setIsActive(Number(key));
+    isActive = Number(key);
     if (Number(key) === 1) {
       router.push('/me/lists', undefined, { shallow: true });
     }

@@ -1,4 +1,4 @@
-import { FunctionComponent, SetStateAction, useState } from 'react';
+import { FunctionComponent, SetStateAction } from 'react';
 import { useRouter } from 'next/router';
 
 import { Tab, TabPane } from 'src/components';
@@ -7,10 +7,10 @@ import withDashboardLayout from 'src/HOC/withDashboardLayout';
 
 const Highlights: FunctionComponent<{}> = () => {
   const router = useRouter();
-  const [_, setIsActive] = useState(1);
+  let isActive = 1;
 
   const handleChange = (key: SetStateAction<number>) => {
-    setIsActive(Number(key));
+    isActive = Number(key);
     if (Number(key) === 1) {
       router.push('/me/lists', undefined, { shallow: true });
     }
