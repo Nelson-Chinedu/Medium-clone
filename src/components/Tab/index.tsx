@@ -3,18 +3,19 @@ import { Tabs } from 'antd';
 
 export const { TabPane } = Tabs;
 
-function callback(key: string) {
-  console.log(key);
-}
-
 type Props = {
   children: ReactNode;
   defaultActiveKey: string;
+  onChange?: any;
 };
 
-const Index: FunctionComponent<Props> = ({ children, defaultActiveKey }) => {
+const Index: FunctionComponent<Props> = ({
+  children,
+  defaultActiveKey,
+  onChange,
+}) => {
   return (
-    <Tabs defaultActiveKey={defaultActiveKey} onChange={callback}>
+    <Tabs defaultActiveKey={defaultActiveKey} onChange={onChange}>
       {children}
     </Tabs>
   );

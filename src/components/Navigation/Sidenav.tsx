@@ -1,10 +1,13 @@
 import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Image, Tooltip } from 'antd';
 
 import { Avatar } from 'src/components';
 
 const Sidenav: FunctionComponent<{}> = () => {
+  const { pathname } = useRouter();
+
   return (
     <div className="c-sidenav flex flex-col fixed justify-between items-center py-10 border-r border-gray-300 h-screen">
       <div>
@@ -25,10 +28,15 @@ const Sidenav: FunctionComponent<{}> = () => {
               viewBox="0 0 24 24"
               fill="none"
               aria-label="Home"
-              className="my-10"
             >
               <path
-                d="M4.5 10.75v10.5c0 .14.11.25.25.25h5c.14 0 .25-.11.25-.25v-5.5c0-.14.11-.25.25-.25h3.5c.14 0 .25.11.25.25v5.5c0 .14.11.25.25.25h5c.14 0 .25-.11.25-.25v-10.5M22 9l-9.1-6.83a1.5 1.5 0 0 0-1.8 0L2 9"
+                d="M4.5 21.25V10.87c0-.07.04-.15.1-.2l7.25-5.43a.25.25 0 0 1 .3 0l7.25 5.44c.06.04.1.12.1.2v10.37c0 .14-.11.25-.25.25h-4.5a.25.25 0 0 1-.25-.25v-5.5a.25.25 0 0 0-.25-.25h-4.5a.25.25 0 0 0-.25.25v5.5c0 .14-.11.25-.25.25h-4.5a.25.25 0 0 1-.25-.25z"
+                fill={pathname === '/' ? 'currentColor' : ''}
+                stroke="currentColor"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M22 9l-9.1-6.83a1.5 1.5 0 0 0-1.8 0L2 9"
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -59,6 +67,7 @@ const Sidenav: FunctionComponent<{}> = () => {
                 d="M5.5 10.53V9a6.5 6.5 0 0 1 13 0v1.53c0 1.42.56 2.78 1.57 3.79l.03.03c.26.26.4.6.4.97v2.93c0 .14-.11.25-.25.25H3.75a.25.25 0 0 1-.25-.25v-2.93c0-.37.14-.71.4-.97l.03-.03c1-1 1.57-2.37 1.57-3.79z"
                 stroke="currentColor"
                 stroke-linejoin="round"
+                fill={pathname === '/me/notifications' ? 'currentColor' : ''}
               ></path>
             </svg>
           </Tooltip>
@@ -77,6 +86,7 @@ const Sidenav: FunctionComponent<{}> = () => {
                 d="M4.5 6.25V21c0 .2.24.32.4.2l5.45-4.09a.25.25 0 0 1 .3 0l5.45 4.09c.16.12.4 0 .4-.2V6.25a.25.25 0 0 0-.25-.25H4.75a.25.25 0 0 0-.25.25z"
                 stroke="currentColor"
                 stroke-linecap="round"
+                fill={pathname === '/me/lists' ? 'currentColor' : ''}
               ></path>
               <path
                 d="M8 6V3.25c0-.14.11-.25.25-.25h11.5c.14 0 .25.11.25.25V16.5"
@@ -104,6 +114,7 @@ const Sidenav: FunctionComponent<{}> = () => {
                 d="M8 8.5h8M8 15.5h5M8 12h8"
                 stroke="currentColor"
                 stroke-linecap="round"
+                fill={pathname === '/me/stories/draft' ? 'currentColor' : ''}
               ></path>
             </svg>
           </Tooltip>
