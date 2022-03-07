@@ -20,8 +20,8 @@ const Notification: FunctionComponent<{}> = () => {
       <h2 className="text-4xl font-extrabold my-6">Notifications</h2>
       <Tab defaultActiveKey="1">
         <TabPane tab="All" key="1">
-          {NOTIFICATIONS.map((notification: Props) => (
-            <div className="flex mt-8 ml-5">
+          {NOTIFICATIONS.map((notification: Props, index: number) => (
+            <div className="flex mt-8 ml-5" key={index}>
               <div>
                 <Avatar
                   key={notification.imageUrl}
@@ -44,8 +44,8 @@ const Notification: FunctionComponent<{}> = () => {
           ))}
         </TabPane>
         <TabPane tab="Responses" key="2">
-          {RESPONSES.map((response: Props) => (
-            <div className="flex mt-8 ml-5">
+          {RESPONSES.map((response: Props, index: number) => (
+            <div className="flex mt-8 ml-5" key={index}>
               <div>
                 <Avatar
                   key={response.imageUrl}
