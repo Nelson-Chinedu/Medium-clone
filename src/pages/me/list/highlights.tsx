@@ -7,10 +7,8 @@ import withDashboardLayout from 'src/HOC/withDashboardLayout';
 
 const Highlights: FunctionComponent<{}> = () => {
   const router = useRouter();
-  let isActive = 1;
 
   const handleChange = (key: SetStateAction<number>) => {
-    isActive = Number(key);
     if (Number(key) === 1) {
       router.push('/me/lists', undefined, { shallow: true });
     }
