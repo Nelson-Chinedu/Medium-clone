@@ -96,7 +96,7 @@ const Sidenav: FunctionComponent<{}> = () => {
             </svg>
           </Tooltip>
         </Link>
-        <Link href="/me/stories/draft">
+        <Link href="/me/stories/drafts">
           <Tooltip placement="right" title="Stories" className="cursor-pointer">
             <svg
               width="24"
