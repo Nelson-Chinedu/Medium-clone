@@ -7,7 +7,7 @@ import withDashboardLayout from 'src/HOC/withDashboardLayout';
 
 const Highlights: FunctionComponent<{}> = () => {
   const router = useRouter();
-  const [_isActive, setIsActive] = useState(1);
+  const [_, setIsActive] = useState(1);
 
   const handleChange = (key: SetStateAction<number>) => {
     setIsActive(Number(key));

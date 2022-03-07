@@ -10,7 +10,7 @@ import RECENTLY_VIEWED from 'src/constant/mock_data.json';
 
 const Recent: FunctionComponent<{}> = () => {
   const router = useRouter();
-  const [_isActive, setIsActive] = useState(1);
+  const [_, setIsActive] = useState(1);
 
   const handleChange = (key: SetStateAction<number>) => {
     setIsActive(Number(key));
