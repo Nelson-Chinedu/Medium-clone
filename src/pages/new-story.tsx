@@ -1,9 +1,16 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 
 import { Image } from 'antd';
 import { BellOutlined, EllipsisOutlined } from '@ant-design/icons';
 
-import { Avatar, Button, Editor } from 'src/components';
+import { Avatar, Button } from 'src/components';
+
+let Editor: any;
+
+if (typeof window !== 'undefined') {
+  Editor = dynamic(() => import('../components/Editor'));
+}
 
 const NewStory = () => {
   return (
@@ -31,9 +38,7 @@ const NewStory = () => {
           />
         </div>
       </div>
-      <div className="w-3/4 my-8 mx-auto">
-        <Editor />
-      </div>
+      <div className="w-3/4 my-8 mx-auto">{Editor && <Editor />}</div>
     </div>
   );
 };
