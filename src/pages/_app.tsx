@@ -8,7 +8,8 @@ import 'antd/dist/antd.css';
 
 import '../styles/pages.scss';
 
-import MenuContextProvider from 'src/context/MenuContext';
+import MenuContextProvider from 'src/context/SidenavMenu-ctx';
+import GetStartedContextProvider from 'src/context/GetStarted-ctx';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
@@ -24,9 +25,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           key="viewport"
         />
       </Head>
-      <MenuContextProvider>
-        <Component {...pageProps} />
-      </MenuContextProvider>
+      <GetStartedContextProvider>
+        <MenuContextProvider>
+          <Component {...pageProps} />
+        </MenuContextProvider>
+      </GetStartedContextProvider>
     </>
   );
 }

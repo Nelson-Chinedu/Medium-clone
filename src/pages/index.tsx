@@ -4,7 +4,7 @@ import Landing from 'src/pages/Main/Landing';
 import Dashboard from 'src/pages/App/Landing';
 
 const Index: FunctionComponent<{}> = () => {
-  const [loggedIn] = useState<boolean>(true);
+  const [loggedIn] = useState<boolean>(false);
   if (loggedIn) {
     return <Dashboard />;
   }
