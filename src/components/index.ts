@@ -8,6 +8,7 @@ import Tab from 'src/components/Tab';
 import { TabPane } from 'src/components/Tab';
 import Chip from 'src/components/Chip';
 import Editor from 'src/components/Editor';
+import Menu from 'src/components/Tooltip/Menu';
 
 export {
   Button,
@@ -20,4 +21,5 @@ export {
   TabPane,
   Chip,
   Editor,
+  Menu,
 };

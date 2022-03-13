@@ -8,6 +8,8 @@ import 'antd/dist/antd.css';
 
 import '../styles/pages.scss';
 
+import MenuContextProvider from 'src/context/MenuContext';
+
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
@@ -22,7 +24,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           key="viewport"
         />
       </Head>
-      <Component {...pageProps} />
+      <MenuContextProvider>
+        <Component {...pageProps} />
+      </MenuContextProvider>
     </>
   );
 }

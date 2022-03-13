@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ComponentType } from 'react';
 import dynamic from 'next/dynamic';
 
 import { Image } from 'antd';
@@ -6,7 +6,7 @@ import { BellOutlined, EllipsisOutlined } from '@ant-design/icons';
 
 import { Avatar, Button } from 'src/components';
 
-let Editor: any;
+let Editor: ComponentType<{}>;
 
 if (typeof window !== 'undefined') {
   Editor = dynamic(() => import('../components/Editor'));
@@ -24,6 +24,7 @@ const NewStory = () => {
           <Button
             className="rounded-full bg-green-700 text-white text-xs mr-4"
             type="default"
+            size="middle"
             // handleClick={handleSave}
           >
             Publish
