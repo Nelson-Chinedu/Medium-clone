@@ -8,7 +8,7 @@ import 'antd/dist/antd.css';
 
 import '../styles/pages.scss';
 
-import MenuContextProvider from 'src/context/MenuContext';
+import MenuContextProvider from 'src/context/SidenavMenu-ctx';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
