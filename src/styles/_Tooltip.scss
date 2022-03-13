@@ -1,15 +1,15 @@
 .c-menutooltip::after {
-  content: "";
+  content: '';
   position: absolute;
-  top: -2%;
-  left: 64%;
+  bottom: -6%;
+  left: 8%;
   margin-left: -5px;
-  border-width: 7px;
+  border-width: 15px;
   border-style: solid;
-  border-color: transparent transparent #909090 transparent;
+  border-color: #efefef transparent transparent transparent;
 }
 .c-notificationtooltip::after {
-  content: "";
+  content: '';
   position: absolute;
   top: -4%;
   left: 33%;

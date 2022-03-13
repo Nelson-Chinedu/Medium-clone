@@ -70,7 +70,12 @@ const Articles: FunctionComponent<{}> = () => {
               </div>
             </div>
             <div style={{ width: '20%' }}>
-              <img src={blog.imageUrl} width={150} height={150} />
+              <img
+                src={blog.imageUrl}
+                width={150}
+                height={150}
+                alt="article display image"
+              />
             </div>
           </article>
           <Divider />
