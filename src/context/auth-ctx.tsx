@@ -44,13 +44,9 @@ const AuthContextProvider: FunctionComponent<Props> = ({ children }) => {
   };
 
   useEffect(() => {
-    let isMounted = true;
     if (state) {
       setIsLoggedIn(true);
     }
-    return () => {
-      isMounted = false;
-    };
   }, [state]);
 
   const handleGoogle = async () => {
