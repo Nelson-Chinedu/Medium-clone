@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useCallback } from 'react';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 
@@ -6,11 +6,18 @@ import NavigationDesktop from 'src/components/Navigation/TopNav';
 
 import Button from 'src/components/Button';
 
+import useGetStarted from 'src/hooks/useGetStarted';
+
 const Herosection: FunctionComponent<{}> = () => {
   const { ref, inView } = useInView({
     threshold: 1,
     initialInView: true,
   });
+  const [state, setState] = useGetStarted();
+
+  const handleGetStarted = useCallback(() => {
+    setState({ ...state, toggleGetStarted: !state.toggleGetStarted });
+  }, []);
 
   return (
     <div className="c-herosection">
@@ -31,6 +38,7 @@ const Herosection: FunctionComponent<{}> = () => {
                 className="px-4 my-6 pb-12 border border-black bg-black text-white hover:bg-black hover:outline-none"
                 size="large"
                 shape="round"
+                handleClick={handleGetStarted}
               >
                 Start writing
               </Button>

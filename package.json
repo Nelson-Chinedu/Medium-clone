@@ -31,6 +31,7 @@
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
     "dotenv-webpack": "^7.0.2",
+    "firebase": "^9.6.8",
     "formik": "^2.2.6",
     "next": "latest",
     "next-compose-plugins": "^2.2.1",

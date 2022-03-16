@@ -1,10 +1,25 @@
 import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Avatar } from 'antd';
+
 import useMenu from 'src/hooks/useMenu';
+import useLocalStorage from 'src/hooks/useLocalStorage';
 
 const Menu: FunctionComponent<{}> = () => {
   const [state] = useMenu();
+  const router = useRouter();
+
+  const [user] = useLocalStorage('mc_u');
+
+  const names = user['displayName'];
+  const username = names?.split(' ');
+
+  const handleSignOut = () => {
+    localStorage.removeItem('mc_ct');
+    localStorage.removeItem('mc_u');
+    router.reload();
+  };
 
   return (
     <div
@@ -37,7 +52,9 @@ const Menu: FunctionComponent<{}> = () => {
         </div>
         <div className="border-b border-gray-200 px-4 py-4">
           <Link href="/">
-            <a className="py-3 block">Sign out</a>
+            <a onClick={handleSignOut} className="py-3 block">
+              Sign out
+            </a>
           </Link>
           <Link href="/">
             <a className="py-3 block">Refine recommendations</a>
@@ -55,14 +72,14 @@ const Menu: FunctionComponent<{}> = () => {
         <div className="flex justify-start py-6 px-4 items-center ">
           <div className="pr-3">
             <Avatar
-              src={<img src="/image/avatar-1.jpg" />}
+              src={<img src={`${user.photoURL}`} />}
               size={35}
               className="cursor-pointer"
             />
           </div>
           <div>
-            <p className="text-black">Nelson Chinedu</p>
-            <p>@nelson</p>
+            <p className="text-black">{names}</p>
+            <p>@{username[0].toLowerCase()}</p>
           </div>
         </div>
       </div>
