@@ -161,7 +161,7 @@ const Sidenav: FunctionComponent<{}> = () => {
             alt="profile picture"
             shape="circle"
             size="default"
-            src={user.photoURL}
+            src={user?.photoURL}
           />
         </div>
       </div>

@@ -16,9 +16,11 @@ const useLocalStorage = (key: string) => {
 
   useEffect(() => {
     let isMounted = true;
-    if (value !== null) {
-      const stringifiedValue = JSON.stringify(value);
-      localStorage.setItem(key, stringifiedValue);
+    if (isMounted) {
+      if (value !== null) {
+        const stringifiedValue = JSON.stringify(value);
+        localStorage.setItem(key, stringifiedValue);
+      }
     }
     return () => {
       isMounted = false;

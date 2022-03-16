@@ -12,7 +12,7 @@ const Menu: FunctionComponent<{}> = () => {
 
   const [user] = useLocalStorage('mc_u');
 
-  const names = user['displayName'];
+  const names = user?.displayName;
   const username = names?.split(' ');
 
   const handleSignOut = () => {
@@ -72,14 +72,14 @@ const Menu: FunctionComponent<{}> = () => {
         <div className="flex justify-start py-6 px-4 items-center ">
           <div className="pr-3">
             <Avatar
-              src={<img src={`${user.photoURL}`} />}
+              src={<img src={`${user?.photoURL}`} />}
               size={35}
               className="cursor-pointer"
             />
           </div>
           <div>
             <p className="text-black">{names}</p>
-            <p>@{username[0].toLowerCase()}</p>
+            <p>@{username && username[0].toLowerCase()}</p>
           </div>
         </div>
       </div>
