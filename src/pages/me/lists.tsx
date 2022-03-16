@@ -5,6 +5,7 @@ import { CloseOutlined } from '@ant-design/icons';
 import { Tab, TabPane, Button } from 'src/components';
 
 import withDashboardLayout from 'src/HOC/withDashboardLayout';
+import withAuth from 'src/HOC/withAuth';
 
 const Lists: FunctionComponent<{}> = () => {
   const router = useRouter();
@@ -72,4 +73,4 @@ const Lists: FunctionComponent<{}> = () => {
   );
 };
 
-export default withDashboardLayout(Lists);
+export default withAuth(withDashboardLayout(Lists));

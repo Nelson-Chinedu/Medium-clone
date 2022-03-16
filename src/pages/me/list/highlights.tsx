@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { Tab, TabPane } from 'src/components';
 
 import withDashboardLayout from 'src/HOC/withDashboardLayout';
+import withAuth from 'src/HOC/withAuth';
 
 const Highlights: FunctionComponent<{}> = () => {
   const router = useRouter();
@@ -44,4 +45,4 @@ const Highlights: FunctionComponent<{}> = () => {
   );
 };
 
-export default withDashboardLayout(Highlights);
+export default withAuth(withDashboardLayout(Highlights));

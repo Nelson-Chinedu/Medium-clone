@@ -3,6 +3,7 @@ import { FunctionComponent } from 'react';
 import { Tab, TabPane, Avatar } from 'src/components';
 
 import withDashboardLayout from 'src/HOC/withDashboardLayout';
+import withAuth from 'src/HOC/withAuth';
 
 import NOTIFICATIONS from 'src/constant/notifications.json';
 import RESPONSES from 'src/constant/responses.json';
@@ -71,4 +72,4 @@ const Notification: FunctionComponent<{}> = () => {
   );
 };
 
-export default withDashboardLayout(Notification);
+export default withAuth(withDashboardLayout(Notification));
