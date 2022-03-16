@@ -6,10 +6,13 @@ import { Tooltip } from 'antd';
 import { Avatar, Menu } from 'src/components';
 
 import useMenu from 'src/hooks/useMenu';
+import useLocalStorage from 'src/hooks/useLocalStorage';
 
 const Sidenav: FunctionComponent<{}> = () => {
   const { pathname } = useRouter();
   const [state, setState] = useMenu();
+
+  const [user] = useLocalStorage('mc_u');
 
   const handleToggleMenu = useCallback(() => {
     setState({ ...state, toggleMenu: !state.toggleMenu });
@@ -158,7 +161,7 @@ const Sidenav: FunctionComponent<{}> = () => {
             alt="profile picture"
             shape="circle"
             size="default"
-            src="https://randomuser.me/api/portraits/women/78.jpg"
+            src={user?.photoURL}
           />
         </div>
       </div>

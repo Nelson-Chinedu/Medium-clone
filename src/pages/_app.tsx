@@ -10,6 +10,7 @@ import '../styles/pages.scss';
 
 import MenuContextProvider from 'src/context/SidenavMenu-ctx';
 import GetStartedContextProvider from 'src/context/GetStarted-ctx';
+import AuthContextProvider from 'src/context/auth-ctx';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
@@ -26,9 +27,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GetStartedContextProvider>
-        <MenuContextProvider>
-          <Component {...pageProps} />
-        </MenuContextProvider>
+        <AuthContextProvider>
+          <MenuContextProvider>
+            <Component {...pageProps} />
+          </MenuContextProvider>
+        </AuthContextProvider>
       </GetStartedContextProvider>
     </>
   );

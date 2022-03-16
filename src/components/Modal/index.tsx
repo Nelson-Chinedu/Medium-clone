@@ -20,7 +20,10 @@ const Index: FunctionComponent<Props> = ({ children }) => {
   };
 
   return (
-    <div className="bg-white bg-opacity-90 z-50 fixed inset-0">
+    <div
+      className="bg-white bg-opacity-90 z-50 fixed inset-0"
+      onClick={handleCloseModal}
+    >
       <div className="c-modal w-2/4 mx-auto flex flex-col items-center bg-white shadow-lg">
         <div className="w-11/12 text-right mt-4">
           <Image

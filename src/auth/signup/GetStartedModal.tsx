@@ -3,16 +3,22 @@ import React, { FunctionComponent, useCallback } from 'react';
 import { Button } from 'src/components';
 
 import useGetStarted from 'src/hooks/useGetStarted';
+import useAuth from 'src/hooks/useAuth';
 
 const GetStartedModal: FunctionComponent<{}> = () => {
   const [state, setState] = useGetStarted();
-
-  const handleSignIn = useCallback(() => {
-    setState({ ...state, signIn: !state.signIn });
-  }, []);
+  const { handleGoogle, handleFacebook } = useAuth();
 
   const handleEmailSignup = useCallback(() => {
     setState({ ...state, signIn: false, signUp: true, email: true });
+  }, []);
+
+  const handleGoogleAuth = useCallback(() => {
+    handleGoogle();
+  }, []);
+
+  const handleFacebookAuth = useCallback(() => {
+    handleFacebook();
   }, []);
 
   return (
@@ -27,6 +33,7 @@ const GetStartedModal: FunctionComponent<{}> = () => {
           type="default"
           className="mb-4 flex items-center"
           size="large"
+          handleClick={handleGoogleAuth}
         >
           <svg width="25" height="25" className="mr-1">
             <g fill="none" fill-rule="evenodd">
@@ -55,6 +62,7 @@ const GetStartedModal: FunctionComponent<{}> = () => {
           type="default"
           className="mb-4 flex items-center"
           size="large"
+          handleClick={handleFacebookAuth}
         >
           <svg width="25" height="25" fill="#3B5998" className="mr-1">
             <path
@@ -82,7 +90,7 @@ const GetStartedModal: FunctionComponent<{}> = () => {
           Already have an account?{' '}
           <span
             className="font-bold text-green-700 cursor-pointer"
-            onClick={handleSignIn}
+            // onClick={handleSignIn}
           >
             Sign in
           </span>

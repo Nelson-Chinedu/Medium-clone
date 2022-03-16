@@ -2,10 +2,13 @@ import React, { FunctionComponent, useCallback } from 'react';
 
 import { Button } from 'src/components';
 
+import useAuth from 'src/hooks/useAuth';
+
 import useGetStarted from 'src/hooks/useGetStarted';
 
 const SignIn: FunctionComponent<{}> = () => {
   const [state, setState] = useGetStarted();
+  const { handleFacebook, handleGoogle } = useAuth();
 
   const handleSignUp = useCallback(() => {
     setState({ ...state, signIn: !state.signIn });
@@ -13,6 +16,14 @@ const SignIn: FunctionComponent<{}> = () => {
 
   const handleEmailSignIn = useCallback(() => {
     setState({ ...state, signIn: false, email: true });
+  }, []);
+
+  const handleGoogleAuth = useCallback(() => {
+    handleGoogle();
+  }, []);
+
+  const handleFacebookAuth = useCallback(() => {
+    handleFacebook();
   }, []);
 
   return (
@@ -27,6 +38,7 @@ const SignIn: FunctionComponent<{}> = () => {
           type="default"
           className="mb-4 flex items-center"
           size="large"
+          handleClick={handleGoogleAuth}
         >
           <svg width="25" height="25" className="mr-1">
             <g fill="none" fill-rule="evenodd">
@@ -55,6 +67,7 @@ const SignIn: FunctionComponent<{}> = () => {
           type="default"
           className="mb-4 flex items-center"
           size="large"
+          handleClick={handleFacebookAuth}
         >
           <svg width="25" height="25" fill="#3B5998" className="mr-1">
             <path
