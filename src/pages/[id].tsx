@@ -9,6 +9,7 @@ import {
 import { Button } from 'src/components';
 
 import withDashboardLayout from 'src/HOC/withDashboardLayout';
+import withAuth from 'src/HOC/withAuth';
 
 const Post: FunctionComponent<{}> = () => {
   return (
@@ -122,4 +123,4 @@ const Post: FunctionComponent<{}> = () => {
   );
 };
 
-export default withDashboardLayout(Post);
+export default withAuth(withDashboardLayout(Post));

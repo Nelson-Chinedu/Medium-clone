@@ -3,7 +3,7 @@ import Aside from 'src/components/Aside';
 import Sidenav from 'src/components/Navigation/Sidenav';
 
 const withDashboardLayout =
-  (Component: any) =>
+  (Component: React.ComponentType<{}>) =>
   ({ ...props }) => {
     return (
       <div className="flex justify-between">

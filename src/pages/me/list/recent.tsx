@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { Tab, TabPane } from 'src/components';
 
 import withDashboardLayout from 'src/HOC/withDashboardLayout';
+import withAuth from 'src/HOC/withAuth';
 
 import RECENTLY_VIEWED from 'src/constant/mock_data.json';
 
@@ -65,4 +66,4 @@ const Recent: FunctionComponent<{}> = () => {
   );
 };
 
-export default withDashboardLayout(Recent);
+export default withAuth(withDashboardLayout(Recent));

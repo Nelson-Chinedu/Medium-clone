@@ -5,6 +5,7 @@ import { EllipsisOutlined } from '@ant-design/icons';
 import { Tab, TabPane, Button } from 'src/components';
 
 import withDashboardLayout from 'src/HOC/withDashboardLayout';
+import withAuth from 'src/HOC/withAuth';
 
 const RESPONSES = [
   'Hello Joe, thanks for the feedback',
@@ -78,4 +79,4 @@ const Responses: FunctionComponent<{}> = () => {
   );
 };
 
-export default withDashboardLayout(Responses);
+export default withAuth(withDashboardLayout(Responses));

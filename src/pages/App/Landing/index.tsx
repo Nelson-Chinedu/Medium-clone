@@ -6,6 +6,7 @@ import { Button, Avatar, TabPane, Tab } from 'src/components';
 import Articles from 'src/pages/App/Landing/Articles';
 
 import withDashboardLayout from 'src/HOC/withDashboardLayout';
+import withAuth from 'src/HOC/withAuth';
 
 const SRC_URL = [
   'https://randomuser.me/api/portraits/men/77.jpg',
@@ -63,4 +64,4 @@ const Index: FunctionComponent<{}> = () => {
   );
 };
 
-export default withDashboardLayout(Index);
+export default withAuth(withDashboardLayout(Index));

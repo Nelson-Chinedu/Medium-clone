@@ -23,6 +23,7 @@ export const AuthContext = createContext(null);
 
 const AuthContextProvider: FunctionComponent<Props> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
@@ -44,9 +45,12 @@ const AuthContextProvider: FunctionComponent<Props> = ({ children }) => {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     if (state) {
       setIsLoggedIn(true);
+      setIsLoading(false);
     }
+    setIsLoading(false);
   }, [state]);
 
   const handleGoogle = async () => {
@@ -107,7 +111,13 @@ const AuthContextProvider: FunctionComponent<Props> = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, handleGoogle, handleEmail, handleFacebook }}
+      value={{
+        isLoggedIn,
+        isLoading,
+        handleGoogle,
+        handleEmail,
+        handleFacebook,
+      }}
     >
       {children}
     </AuthContext.Provider>

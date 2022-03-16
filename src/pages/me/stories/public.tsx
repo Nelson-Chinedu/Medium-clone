@@ -5,6 +5,7 @@ import { EllipsisOutlined } from '@ant-design/icons';
 import { Tab, TabPane, Button } from 'src/components';
 
 import withDashboardLayout from 'src/HOC/withDashboardLayout';
+import withAuth from 'src/HOC/withAuth';
 
 import RECENTLY_VIEWED from 'src/constant/mock_data.json';
 
@@ -79,4 +80,4 @@ const Public: FunctionComponent<{}> = () => {
   );
 };
 
-export default withDashboardLayout(Public);
+export default withAuth(withDashboardLayout(Public));

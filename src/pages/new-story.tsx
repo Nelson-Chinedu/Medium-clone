@@ -6,6 +6,8 @@ import { BellOutlined, EllipsisOutlined } from '@ant-design/icons';
 
 import { Avatar, Button } from 'src/components';
 
+import withAuth from 'src/HOC/withAuth';
+
 let Editor: ComponentType<{}>;
 
 if (typeof window !== 'undefined') {
@@ -44,4 +46,4 @@ const NewStory = () => {
   );
 };
 
-export default NewStory;
+export default withAuth(NewStory);
