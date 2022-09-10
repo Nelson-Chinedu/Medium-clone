@@ -36,7 +36,7 @@ const SignIn: FunctionComponent<{}> = () => {
         <Button
           shape="round"
           type="default"
-          className="mb-4 flex items-center"
+          className="mb-4 flex items-center hover:text-gray-500"
           size="large"
           handleClick={handleGoogleAuth}
         >
@@ -65,7 +65,7 @@ const SignIn: FunctionComponent<{}> = () => {
         <Button
           shape="round"
           type="default"
-          className="mb-4 flex items-center"
+          className="mb-4 flex items-center hover:text-gray-500"
           size="large"
           handleClick={handleFacebookAuth}
         >
@@ -80,7 +80,7 @@ const SignIn: FunctionComponent<{}> = () => {
         <Button
           shape="round"
           type="default"
-          className="mb-4 flex items-center"
+          className="mb-4 flex items-center hover:text-gray-500"
           size="large"
         >
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -94,7 +94,7 @@ const SignIn: FunctionComponent<{}> = () => {
         <Button
           shape="round"
           type="default"
-          className="mb-4 flex items-center"
+          className="mb-4 flex items-center hover:text-gray-500"
           size="large"
         >
           <svg width="25" height="25" viewBox="0 0 25 25">
@@ -105,7 +105,7 @@ const SignIn: FunctionComponent<{}> = () => {
         <Button
           shape="round"
           type="default"
-          className="mb-4 flex items-center"
+          className="mb-4 flex items-center hover:text-gray-500"
           size="large"
           handleClick={handleEmailSignIn}
         >
@@ -117,7 +117,7 @@ const SignIn: FunctionComponent<{}> = () => {
       </div>
       <div className="text-center mt-6 mb-16">
         <p className="text-base">
-          No account?{' '}
+          No account?
           <span
             className="font-bold text-green-700 cursor-pointer"
             onClick={handleSignUp}
