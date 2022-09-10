@@ -31,7 +31,7 @@ const GetStartedModal: FunctionComponent<{}> = () => {
         <Button
           shape="round"
           type="default"
-          className="mb-4 flex items-center"
+          className="mb-4 flex items-center hover:text-gray-500"
           size="large"
           handleClick={handleGoogleAuth}
         >
@@ -60,7 +60,7 @@ const GetStartedModal: FunctionComponent<{}> = () => {
         <Button
           shape="round"
           type="default"
-          className="mb-4 flex items-center"
+          className="mb-4 flex items-center hover:text-gray-500"
           size="large"
           handleClick={handleFacebookAuth}
         >
@@ -75,7 +75,7 @@ const GetStartedModal: FunctionComponent<{}> = () => {
         <Button
           shape="round"
           type="default"
-          className="mb-4 flex items-center"
+          className="mb-4 flex items-center hover:text-gray-500"
           size="large"
           handleClick={handleEmailSignup}
         >
@@ -87,7 +87,7 @@ const GetStartedModal: FunctionComponent<{}> = () => {
       </div>
       <div className="text-center mt-6 mb-24">
         <p className="text-base">
-          Already have an account?{' '}
+          Already have an account?
           <span
             className="font-bold text-green-700 cursor-pointer"
             // onClick={handleSignIn}
